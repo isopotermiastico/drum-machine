@@ -1,0 +1,57 @@
+body 
+{
+  margin: 0;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: Arial, sans-serif;
+}
+
+
+* {box-sizing: border-box;}
+
+.drum-machine
+{
+    max-width: 800px;
+    margin: 0 auto; 
+}
+
+.instrument-name
+{
+    text-justify: center;
+    text-align: center;
+}
+
+.drum-pad
+{
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    margin: 0px;
+    cursor: pointer;
+    flex: 1;
+}
+
+.pad-grid 
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.pad-group
+{
+    display: flex;
+    gap: 2px;
+    width: 100px;
+    flex: 1;
+}
+
+.pad-row
+{
+    display: flex;
+    gap: 20px;
+}
+
