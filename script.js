@@ -1,20 +1,16 @@
 function createDrumGrid()
 {
-    const instruments = 4;
     const stepsPerRow = 16;
 
     const padGrid = document.getElementById("padGrid");
+    const instrumentLabels = document.getElementById("instrumentLabels");
+    
+    instruments = ["high hat", "clap", "snare", "kick"];
 
-    function createPadRow(i)
+    function createPadRow(parent)
     {
         const row = document.createElement("div");
         row.className = "pad-row";
-
-        const label = document.createElement("div");
-        label.className = "instrument-name";
-        label.textContent = i;
-
-        row.appendChild(label);
 
         for (let j = 1; j <= stepsPerRow; j += 4) 
             {
@@ -25,19 +21,32 @@ function createDrumGrid()
                 {
                     const pad = document.createElement("button");
                     pad.className = "drum-pad";
+                    pad.addEventListener("click", () => pad.classList.toggle("active"));
                     group.appendChild(pad);
                 }
                 row.appendChild(group);
             }
-        return row
 
+    
+        parent.appendChild(row);
+   
     }
 
-    for (let i = 1; i <= instruments; i++)
-        {
-            const pad_row = createPadRow(i);
-            padGrid.appendChild(pad_row);
-        }
+    function createInstrumentLable(parent, instrument_name)
+    {
+        const label = document.createElement("div");
+        label.className = "label";
+        label.textContent = instrument_name;
+        parent.appendChild(label);
+    
+    }
+
+    instruments.forEach(name => 
+    {
+        createInstrumentLable(instrumentLabels, name);
+        createPadRow(padGrid);
+    });
+
         
 }
 

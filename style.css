@@ -13,11 +13,6 @@ body
 
 * {box-sizing: border-box;}
 
-.drum-machine
-{
-    max-width: 800px;
-    margin: 0 auto; 
-}
 
 .instrument-name
 {
@@ -27,25 +22,28 @@ body
 
 .drum-pad
 {
+    all: unset;
     aspect-ratio: 1 / 1;
-    width: 100%;
-    margin: 0px;
-    cursor: pointer;
     flex: 1;
+    display: flex;
+
+    background-color: #ddd;
+    border: 1px solid #555;
+    border-radius: 2px;  
+    padding: initial;        
+    
+    
+    background-color: ButtonFace; 
+    
+    cursor: pointer;
+    transition: background-color 0.2s; 
 }
 
-.pad-grid 
-{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
 
 .pad-group
 {
     display: flex;
     gap: 2px;
-    width: 100px;
     flex: 1;
 }
 
@@ -55,3 +53,59 @@ body
     gap: 20px;
 }
 
+.drum-pad.active
+{
+    background-color: rgb(106, 202, 175);
+}
+
+.wrapper
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #d7d7d7;
+    width: 100vh;
+    max-width: 800px;
+    height: 50vh;
+    padding: 2%;
+    gap: 15px;
+    border-radius: 2px;
+}
+
+.sequencer
+{
+    display: flex;
+    width: 100%;
+    margin: 0 auto; 
+    background-color: #eefbff;
+    padding: 2%;
+    border-radius: 2px;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.instrument-labels, .pad-grid
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100px;
+
+}
+
+.instrument-labels
+{
+    width: 20%;
+}
+
+.pad-grid 
+{
+    width: 100%;
+}
+
+.label 
+{
+  font-size: clamp(1rem, 2vw, 20px);
+}
