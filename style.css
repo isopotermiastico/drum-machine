@@ -18,6 +18,10 @@ body
 
 }
 
+.container, .wrapper, .sequencer
+{
+    border-radius: 2px;
+}
 
 .instrument-name
 {
