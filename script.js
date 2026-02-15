@@ -3,7 +3,6 @@ function createDrumGrid()
     const stepsPerRow = 16;
 
     const padGrid = document.getElementById("padGrid");
-    const instrumentLabels = document.getElementById("instrumentLabels");
     
     instruments = ["high hat", "clap", "snare", "kick"];
 
@@ -43,10 +42,13 @@ function createDrumGrid()
 
     instruments.forEach(name => 
     {
-        createInstrumentLable(instrumentLabels, name);
-        createPadRow(padGrid);
-    });
-
+        const full_row = document.createElement("div");
+        full_row.className = "full-row";
+        createInstrumentLable(full_row, name);
+        createPadRow(full_row);
+        padGrid.appendChild(full_row);
+        });
+   
         
 }
 
